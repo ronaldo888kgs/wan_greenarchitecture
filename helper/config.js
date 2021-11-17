@@ -19,11 +19,13 @@ const config = {
       port: 5002
     },
     db: {
-      host: 'uqmajkwtyshxo0hm7t0v:OfRAuw0s1dpAZflI7wHi@bdwugk1hgf3pnda-mongodb.services.clever-cloud.com',
+      //host: 'uqmajkwtyshxo0hm7t0v:OfRAuw0s1dpAZflI7wHi@bdwugk1hgf3pnda-mongodb.services.clever-cloud.com',
+      host:'dbuser:-7EXeG_-RLJh7ad@cluster0.qx8sy.mongodb.net',
       port: 27017,
-      username: '',
-      password: '',
-      name: 'bdwugk1hgf3pnda',
+      username: 'dbuser',
+      password: '-7EXeG_-RLJh7ad',
+      //name: 'bdwugk1hgf3pnda',
+      name:'myFirstDatabase',
       prefix:'linkwell_'
     },
     mail: {

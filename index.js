@@ -41,7 +41,8 @@ app.use(cors())
 /*
 * Below lines used to connect databse moongoose ORM
 */
-mongoose.connect('mongodb://'+config.db.host+':'+config.db.port+'/'+config.db.name, {useNewUrlParser: true});
+//mongoose.connect('mongodb://'+config.db.host+':'+config.db.port+'/'+config.db.name, {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://'+config.db.host+'/'+config.db.name, {useNewUrlParser: true});
 var db = mongoose.connection;
 // Added check for DB connection
 db.on('connected', () => console.log('Connected'));
