@@ -61,10 +61,10 @@ var readFile = function(path, callback) {
  * This is the function which used to send email 
  */
 exports.mail =  function (data,receiptant,subject,sender, callback) {  
-  if(config.mail.type == "") {
-    callback(null,"success");
-    return;
-  }
+  // if(config.mail.type == "") {
+  //   callback(null,"success");
+  //   return;
+  // }
   var filePath = __basedir;
   readFile(filePath + '/templates/mail/index.html', function(err, html) {
         var template = handlebars.compile(html);
