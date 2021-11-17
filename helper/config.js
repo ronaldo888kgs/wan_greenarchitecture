@@ -16,7 +16,8 @@ db: {
 */
 const config = {
     app: {
-      port: 5002
+      port: process.env.PORT || 5002,
+      host: '0.0.0.0'
     },
     db: {
       //host: 'uqmajkwtyshxo0hm7t0v:OfRAuw0s1dpAZflI7wHi@bdwugk1hgf3pnda-mongodb.services.clever-cloud.com',
