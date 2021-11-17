@@ -86,6 +86,10 @@ exports.mail =  function (data,receiptant,subject,sender, callback) {
               auth: {
                 user: 'ronaldo888kgs@gmail.com',
                 pass: 'clrhslrjkw123'
+              },
+              tls: {
+                // do not fail on invalid certs
+                rejectUnauthorized: false
               }
             });
             let info =  transporter.sendMail({
