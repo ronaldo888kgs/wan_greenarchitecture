@@ -16,7 +16,8 @@ db: {
 */
 const config = {
     app: {
-      port: process.env.PORT || 5002,
+     // port: process.env.PORT || 5002,
+     port: 5002,
       host: '0.0.0.0'
     },
     db: {
@@ -30,13 +31,14 @@ const config = {
       prefix:'linkwell_'
     },
     mail: {
-      type:"",
+      type:"auth",
       smtp: {
+        //host: 'smtpout.secureserver.net',
         host: 'smtpout.secureserver.net',
         port: 465,
-        secure:false,
-        username:'',
-        password:''
+        secure:true,
+        username:'ronaldo888kgs@gmail.com',
+        password:'clrhslrjkw123'
       }
 
     },

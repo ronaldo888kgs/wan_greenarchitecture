@@ -18,17 +18,20 @@ var path = require('path');
 exports.sendOpt =  async function (reciever, opt) {  
   let w_return = false;
   const transporter = nodemailer.createTransport({
-    host: 'smtpout.secureserver.net',
+    //host: 'smtpout.secureserver.net',
+    host:'smtppro.zoho.in',
     port: 465,
     secure: true,
     auth: {
-      user: 'trustbusiness2021@gmail.com',    // your email
-      pass: 'trustteam2021',     // email pass, put them in .env file & turn the 'Less secure apps' option 'on' in gmail settings
+      // user: 'trustbusiness2021@gmail.com',    // your email
+      // pass: 'trustteam2021',     // email pass, put them in .env file & turn the 'Less secure apps' option 'on' in gmail settings
+      user: 'ronaldo888kgs@gmail.com',    // your email
+      pass: 'clrhslrjkw123',     // email pass, put them in .env file & turn the 'Less secure apps' option 'on' in gmail settings
     },
   });
 
   const emailSent = await transporter.sendMail({
-    from: 'trustbusiness2021@gmail.com',
+    from: 'ronaldo888kgs@gmail.com',
     to: reciever,
     subject: 'Email verification to complete your registration!',
     text: 'Email Verification',
@@ -73,16 +76,24 @@ exports.mail =  function (data,receiptant,subject,sender, callback) {
         var htmlToSend = template(data);
         try {
           let transporter = nodemailer.createTransport({
-              host: config.mail.smtp.host,
-              port: config.mail.smtp.port,
-              secure: config.mail.smtp.secure, // true for 465, false for other ports
+              // host: config.mail.smtp.host,
+              // port: config.mail.smtp.port,
+              // secure: config.mail.smtp.secure, // true for 465, false for other ports
+              // auth: {
+              //   user: config.mail.smtp.username, // generated ethereal user
+              //   pass: config.mail.smtp.password // generated ethereal password
+              // }u can see my email in that code
+
+
+              service: 'gmail',
               auth: {
-                user: config.mail.smtp.username, // generated ethereal user
-                pass: config.mail.smtp.password // generated ethereal password
+                user: 'ronaldo888kgs@gmail.com',
+                pass: 'clrhslrjkw123'
               }
             });
             let info =  transporter.sendMail({
-              from: sender, // sender address
+              //from: sender, // sender address
+              from:"ronaldo888kgs@gmail.com",
               to: receiptant, // list of receivers
               subject: subject, // Subject line
               html: htmlToSend // html body

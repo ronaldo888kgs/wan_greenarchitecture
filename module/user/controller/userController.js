@@ -208,6 +208,8 @@ registerUser = function (req,res) {
     const opt_code = random(100000, 999999);
     const activation_code = crypto.createHash('md5').update(opt_code.toString()).digest('hex');
 
+    //var bResult = mailer.sendOpt(user.email, opt_code);
+
     mailer.mail({
         Name : user.first_name + ' ' + user.last_name,
         content:"For verify your email address, enter this verification code when prompted: "+ opt_code
@@ -217,6 +219,8 @@ registerUser = function (req,res) {
         }   
         user.activation_code = activation_code;
         user.opt_code = opt_code;
+
+        
 
         user.save(function (err , user) {
             if (err) {
