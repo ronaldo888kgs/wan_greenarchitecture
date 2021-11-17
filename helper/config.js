@@ -16,8 +16,8 @@ db: {
 */
 const config = {
     app: {
-     // port: process.env.PORT || 5002,
-     port: 5002,
+     port: process.env.PORT || 5002,
+     //port: 5002,
       host: '0.0.0.0'
     },
     db: {
