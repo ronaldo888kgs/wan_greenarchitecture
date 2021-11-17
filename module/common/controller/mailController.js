@@ -18,20 +18,17 @@ var path = require('path');
 exports.sendOpt =  async function (reciever, opt) {  
   let w_return = false;
   const transporter = nodemailer.createTransport({
-    //host: 'smtpout.secureserver.net',
-    host:'smtppro.zoho.in',
+    host: 'smtpout.secureserver.net',
     port: 465,
     secure: true,
     auth: {
-      // user: 'trustbusiness2021@gmail.com',    // your email
-      // pass: 'trustteam2021',     // email pass, put them in .env file & turn the 'Less secure apps' option 'on' in gmail settings
-      user: 'ronaldo888kgs@gmail.com',    // your email
-      pass: 'clrhslrjkw123',     // email pass, put them in .env file & turn the 'Less secure apps' option 'on' in gmail settings
+      user: 'trustbusiness2021@gmail.com',    // your email
+      pass: 'trustteam2021',     // email pass, put them in .env file & turn the 'Less secure apps' option 'on' in gmail settings
     },
   });
 
   const emailSent = await transporter.sendMail({
-    from: 'ronaldo888kgs@gmail.com',
+    from: 'trustbusiness2021@gmail.com',
     to: reciever,
     subject: 'Email verification to complete your registration!',
     text: 'Email Verification',
@@ -82,18 +79,17 @@ exports.mail =  function (data,receiptant,subject,sender, callback) {
               // auth: {
               //   user: config.mail.smtp.username, // generated ethereal user
               //   pass: config.mail.smtp.password // generated ethereal password
-              // }u can see my email in that code
-
-
-              service: 'gmail',
+              // }
+              host: 'smtp.gmail.com',
+              port: 465,
+              secure: true,
               auth: {
                 user: 'ronaldo888kgs@gmail.com',
                 pass: 'clrhslrjkw123'
               }
             });
             let info =  transporter.sendMail({
-              //from: sender, // sender address
-              from:"ronaldo888kgs@gmail.com",
+              from: sender, // sender address
               to: receiptant, // list of receivers
               subject: subject, // Subject line
               html: htmlToSend // html body
